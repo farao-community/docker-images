@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/farao-community/docker-images/workflows/FARAO%20iTools%20Docker%20Image%20CI/badge.svg](https://github.com/farao-community/docker-images/workflows/FARAO%20iTools%20Docker%20Image%20CI)
+[![Actions Status](https://github.com/farao-community/docker-images/workflows/FARAO%20iTools%20Docker%20Image%20CI/badge.svg)](https://github.com/farao-community/docker-images/workflows/FARAO%20iTools%20Docker%20Image%20CI)
 
 # FARAO itools docker image
 
