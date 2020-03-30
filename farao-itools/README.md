@@ -32,7 +32,7 @@ The result will be saved in *output.json* file in current directory.
 
 | Argument name  | Default value | Description                                                                                                        |
 | -------------- | :-----------: | ------------------------------------------------------------------------------------------------------------------ |
-| BRANCH         | master        | Development branch or tag to be compiled and deployed in the container.                                            |
+| BRANCH         | master        | Development branch or tag of farao-core to be compiled and deployed in the container.                              |
 | FARAO_GROUP_ID | 1000          | GID to give to **farao** group inside the container. Useful for volume sharing between host machine and container. |
 | FARAO_USER_ID  | 1000          | UID to give to **farao** user inside the container. Useful for volume sharing between host machine and container.  |
 
