@@ -1,3 +1,5 @@
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+
 # FARAO-COMMUNITY docker images
 
 This repository contains all [Dockerfiles](https://docs.docker.com/engine/reference/builder/) developed by FARAO team.
