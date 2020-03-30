@@ -3,10 +3,8 @@ name: FARAO iTools Docker Image CI
 on:
   push:
     branches: [ master ]
-    paths: [ farao-itools ]
   pull_request:
     branches: [ master ]
-    paths: [ farao-itools ]
 
 jobs:
 
