@@ -9,8 +9,8 @@ RUN git clone -b ${BRANCH} https://github.com/farao-community/farao-core.git \
 FROM centos:8
 LABEL maintainer="Sébastien Murgey <sebastien.murgey@rte-france.com>"
 
-ARG FARAO_USER_ID=1774331476
-ARG FARAO_GROUP_ID=1774331476
+ARG FARAO_USER_ID=1000
+ARG FARAO_GROUP_ID=1000
 
 RUN groupadd -g ${FARAO_GROUP_ID} farao && useradd -l -u ${FARAO_USER_ID} -g farao farao
 
