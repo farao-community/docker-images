@@ -1,0 +1,20 @@
+name: FARAO Hades2 Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ "hades2-base/Dockerfile" ]
+  pull_request:
+    branches: [ master ]
+    paths: [ "hades2-base/Dockerfile" ]
+
+jobs:
+
+  build:
+    name: Build farao/hades2-base image
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build hades2-base --tag farao/hades2-base:$(date +%s)
