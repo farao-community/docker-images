@@ -12,4 +12,5 @@ them have License warnings associated, due to the usage of some freeware softwar
 | Dockefile                    | Description                                                                    |
 | ---------------------------- | ------------------------------------------------------------------------------ |
 | [farao-itools](farao-itools) | Docker executable of FARAO packaged with PowSyBl iTools command line interface |
+| [hades2-base](hades2-base)   | Docker image containing Hades2 executable to be used as base image for FARAO   |
 
