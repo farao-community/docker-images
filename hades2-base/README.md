@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/farao-community/docker-images/workflows/FARAO%20Hades2%20Docker%20Image%20CI/badge.svg)](https://github.com/farao-community/docker-images/workflows/FARAO%20Hades2%20Docker%20Image%20CI)
+![Actions Status](https://github.com/farao-community/docker-images/workflows/FARAO%20Hades2%20Docker%20Image%20CI/badge.svg)
 
 # FARAO Hades2 docker image
 
