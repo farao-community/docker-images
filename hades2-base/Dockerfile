@@ -8,6 +8,7 @@ RUN groupadd -g ${FARAO_GROUP_ID} farao && useradd -l -u ${FARAO_USER_ID} -g far
 
 RUN yum update -y \
     && yum install -y libgomp \
+    && yum install -y java-11-openjdk \
     && yum clean all
 
 USER farao
@@ -20,5 +21,3 @@ RUN curl -sSL https://github.com/rte-france/hades2-distribution/releases/downloa
 
 ENV PATH="/home/farao/farao-dep/runtime/hades2/bin:${PATH}" \
     LD_LIBRARY_PATH="/home/farao/farao-dep/runtime/hades2/lib:${LD_LIBRARY_PATH}"
-
-ENTRYPOINT ["/home/farao/farao-dep/runtime/hades2/hades2.sh"]
