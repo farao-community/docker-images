@@ -21,3 +21,5 @@ RUN curl -sSL https://github.com/rte-france/hades2-distribution/releases/downloa
 
 ENV PATH="/home/farao/farao-dep/runtime/hades2/bin:${PATH}" \
     LD_LIBRARY_PATH="/home/farao/farao-dep/runtime/hades2/lib:${LD_LIBRARY_PATH}"
+
+ENTRYPOINT ["/home/farao/farao-dep/runtime/hades2/hades2.sh"]
