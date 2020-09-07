@@ -1,0 +1,20 @@
+name: FARAO computation base Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ "farao-computation-base/Dockerfile" ]
+  pull_request:
+    branches: [ master ]
+    paths: [ "farao-computation-base/Dockerfile" ]
+
+jobs:
+
+  build:
+    name: Build farao/farao-computation-base image
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build farao-computation-base --tag farao/farao-computation-base:$(date +%s)

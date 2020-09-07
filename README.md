@@ -9,8 +9,9 @@ them have License warnings associated, due to the usage of some freeware softwar
 
 ## Available Dockerfiles
 
-| Dockefile                    | Description                                                                    |
-| ---------------------------- | ------------------------------------------------------------------------------ |
-| [farao-itools](farao-itools) | Docker executable of FARAO packaged with PowSyBl iTools command line interface |
-| [hades2-base](hades2-base)   | Docker image containing Hades2 executable to be used as base image for FARAO   |
+| Dockefile                                          | Description                                                                                                  |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [farao-itools](farao-itools)                       | Docker executable of FARAO packaged with PowSyBl iTools command line interface                               |
+| [hades2-base](hades2-base)                         | Docker image containing Hades2 executable to be used as base image for FARAO                                 |
+| [farao-computation-base](farao-computation-base)   | Docker image containing both Hades2 and FARAO to be used as base image for any FARAO computation application |
 
