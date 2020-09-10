@@ -7,7 +7,7 @@ ARG FARAO_GROUP_ID=1000
 RUN groupadd -g ${FARAO_GROUP_ID} farao && useradd -l -u ${FARAO_USER_ID} -g farao farao
 
 RUN yum update -y \
-    && yum install -y libgomp unzip java-1.8.0-openjdk\
+    && yum install -y libgomp unzip java-11-openjdk\
     && yum clean all
 
 USER farao
