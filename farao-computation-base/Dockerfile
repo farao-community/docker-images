@@ -19,8 +19,7 @@ RUN curl -sSL https://github.com/rte-france/hades2-distribution/releases/downloa
     && rm -f /tmp/hades2.tar.gz
 
 # Download OR-Tools
-
-RUN curl -L https://search.maven.org/remotecontent?filepath=com/farao-community/ortools/ortools-linux-x86-64/7.8.7959/ortools-linux-x86-64-7.8.7959.jar --output /tmp/or-tools.jar \
+RUN curl -sSL https://search.maven.org/remotecontent?filepath=com/farao-community/ortools/ortools-linux-x86-64/7.8.7959/ortools-linux-x86-64-7.8.7959.jar --output /tmp/or-tools.jar \
     && mkdir -p /home/farao/farao-dep/runtime/ortools/lib/ \
     && unzip -j /tmp/or-tools.jar -d /home/farao/farao-dep/runtime/ortools/lib/ linux-x86-64/* \
     && rm -f /tmp/or-tools.jar
