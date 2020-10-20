@@ -13,7 +13,7 @@ RUN yum update -y \
 USER farao
 
 # Download Hades2
-RUN curl -sSL https://github.com/rte-france/hades2-distribution/releases/download/V6.4.0/hades2-V6.4.0.1.1-linux.tar.gz --output /tmp/hades2.tar.gz \
+RUN curl -sSL https://github.com/rte-france/hades2-distribution/releases/download/V6.6.0/hades2-V6.6.0.1-linux.tar.gz --output /tmp/hades2.tar.gz \
     && mkdir -p /home/farao/farao-dep/runtime/hades2 \
     && tar -xzf /tmp/hades2.tar.gz -C /home/farao/farao-dep/runtime/hades2 --strip-components 1 \
     && rm -f /tmp/hades2.tar.gz

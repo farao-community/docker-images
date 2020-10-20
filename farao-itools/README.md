@@ -2,7 +2,7 @@
 
 # FARAO itools docker image
 
-FARAO itools Docker image is an executable image that embeds FARAO tools developed for [PowSyBl iTools](https://www.powsybl.org/docs/tools/).
+FARAO itools Docker image is an executable image that embeds FARAO tools developed for [PowSyBl iTools](https://www.powsybl.org/pages/documentation/user/itools/).
 
 It is a [two-stage](https://docs.docker.com/develop/develop-images/multistage-build/) built image that compiles and deploy FARAO tools in
 an iTools package available as the image entrypoint.
