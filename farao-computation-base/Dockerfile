@@ -1,14 +1,21 @@
-FROM fedora:31
-LABEL maintainer="Sébastien Murgey <sebastien.murgey@rte-france.com>"
+FROM ubuntu:20.04
+LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
 ARG FARAO_USER_ID=1000
 ARG FARAO_GROUP_ID=1000
 
 RUN groupadd -g ${FARAO_GROUP_ID} farao && useradd -l -u ${FARAO_USER_ID} -g farao farao
 
-RUN yum update -y \
-    && yum install -y libgomp unzip java-11-openjdk\
-    && yum clean all
+ENV TZ=Europe/Paris
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get update \
+    && apt-get install -y libgomp1 unzip openjdk-11-jdk curl\
+    && apt-get clean all
+
+RUN mkdir -p /home/farao/farao-dep/runtime/ortools/lib/ \
+    && chmod 777 -R /home/farao/farao-dep/runtime/ortools/lib/
+RUN mkdir -p /home/farao/farao-dep/runtime/hades2 \
+    && chmod 777 -R /home/farao/farao-dep/runtime/hades2
 
 USER farao
 
