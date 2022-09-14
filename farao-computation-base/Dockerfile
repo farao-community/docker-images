@@ -1,21 +1,19 @@
-FROM ubuntu:20.04
+FROM openjdk:11.0.16-jre
 LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
-ARG FARAO_USER_ID=1000
-ARG FARAO_GROUP_ID=1000
-
-RUN groupadd -g ${FARAO_GROUP_ID} farao && useradd -l -u ${FARAO_USER_ID} -g farao farao
-
 ENV TZ=Europe/Paris
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone
+
 RUN apt-get update \
-    && apt-get install -y libgomp1 unzip openjdk-11-jdk curl\
+    && apt-get install -y libgomp1\
     && apt-get clean all
 
-RUN mkdir -p /home/farao/farao-dep/runtime/ortools/lib/ \
-    && chmod 777 -R /home/farao/farao-dep/runtime/ortools/lib/
-RUN mkdir -p /home/farao/farao-dep/runtime/hades2 \
-    && chmod 777 -R /home/farao/farao-dep/runtime/hades2
+RUN groupadd -g 1000 farao \
+    && useradd -l -u 1000 -g farao farao \
+    && mkdir -p /home/farao/tmp \
+    && chown -R farao:farao /home/farao \
+    && chmod 777 /home/farao
 
 USER farao
 
