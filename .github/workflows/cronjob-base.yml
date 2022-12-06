@@ -1,0 +1,20 @@
+name: Cronjob base Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ "cronjob-base/Dockerfile" ]
+  pull_request:
+    branches: [ master ]
+    paths: [ "cronjob-base/Dockerfile" ]
+
+jobs:
+
+  build:
+    name: Build cronjob-base image
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build cronjob-base --tag cronjob-base:$(date +%s)
