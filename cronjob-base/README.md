@@ -8,5 +8,5 @@ Cronjob base Docker image is a base image that embeds time-zone management, curl
 For building the docker image on a developer machine, run the following command in a terminal:
 
 ```bash
-docker build -t cronjob-base:latest .
+docker build -t farao/cronjob-base:latest .
 ```
