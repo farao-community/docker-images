@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jre-jammy
 LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
 ENV TZ=Europe/Paris
