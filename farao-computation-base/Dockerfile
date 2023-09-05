@@ -1,4 +1,4 @@
-FROM openjdk:11.0.16-jre
+FROM eclipse-temurin:17-jre-alpine
 LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
 ENV TZ=Europe/Paris
