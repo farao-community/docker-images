@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:17-jre
 LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
 ENV TZ=Europe/Paris
@@ -7,6 +7,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
 
 RUN apt-get update \
     && apt-get install -y libgomp1\
+    && apt-get install -y unzip\
     && apt-get clean all
 
 RUN groupadd -g 1000 farao \
