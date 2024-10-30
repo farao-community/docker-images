@@ -1,10 +1,6 @@
 FROM eclipse-temurin:17-jre-jammy
 LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
-ENV TZ=Europe/Paris
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-    && echo $TZ > /etc/timezone
-
 RUN apt-get update \
     && apt-get install -y libgomp1\
     && apt-get install -y unzip\
@@ -17,19 +13,3 @@ RUN groupadd -g 1000 farao \
     && chmod 777 /home/farao
 
 USER farao
-
-# Download Hades2
-RUN curl -sSL https://github.com/rte-france/hades2-distribution/releases/download/V6.7.1/hades2-V6.7.1.1-linux.tar.gz --output /tmp/hades2.tar.gz \
-    && mkdir -p /home/farao/farao-dep/runtime/hades2 \
-    && tar -xzf /tmp/hades2.tar.gz -C /home/farao/farao-dep/runtime/hades2 --strip-components 1 \
-    && rm -f /tmp/hades2.tar.gz
-
-# Download OR-Tools
-RUN curl -sSL https://github.com/google/or-tools/releases/download/v9.9/ortools-linux-x86-64-9.9.3963.jar --output /tmp/or-tools.jar \
-    && mkdir -p /home/farao/farao-dep/runtime/ortools/lib/ \
-    && unzip -j /tmp/or-tools.jar -d /home/farao/farao-dep/runtime/ortools/lib/ ortools-linux-x86-64/* \
-    && rm -f /tmp/or-tools.jar
-
-ENV PATH="/home/farao/farao-dep/runtime/hades2/bin:${PATH}" \
-    LD_LIBRARY_PATH="/home/farao/farao-dep/runtime/hades2/lib:/home/farao/farao-dep/runtime/ortools/lib:${LD_LIBRARY_PATH}"
-
