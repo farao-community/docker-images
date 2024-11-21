@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:21-jre-jammy
 LABEL maintainer="Peter Mitri <peter.mitri@rte-france.com>"
 
 RUN apt-get update \
