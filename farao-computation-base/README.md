@@ -12,5 +12,12 @@ First, please note that this image downloads and uses RTE Hades2 distribution. P
 For building the docker image on a developer machine, run the following command in a terminal:
 
 ```bash
-docker build -t farao/farao-computation-base:latest .
+docker build --build-arg FARAO_USER_ID=$(id -u) --build-arg FARAO_GROUP_ID=$(id -g) -t farao/farao-computation-base:latest .
 ```
+
+## Available build arguments
+
+| Argument name  | Default value | Description                                                                                                        |
+| -------------- | :-----------: | ------------------------------------------------------------------------------------------------------------------ |
+| FARAO_GROUP_ID | 1000          | GID to give to **farao** group inside the container. Useful for volume sharing between host machine and container. |
+| FARAO_USER_ID  | 1000          | UID to give to **farao** user inside the container. Useful for volume sharing between host machine and container.  |
